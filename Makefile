@@ -29,8 +29,12 @@ xidle:	xidle.o
 
 xidle.o: xidle.c
 
-clean:
+clean: clean_exec clean_obj
+
+clean_exec:
 	[ -e xidle ] && rm xidle
+
+clean_obj:
 	[ -e xidle.o ] && rm xidle.o
 
 install:
