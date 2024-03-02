@@ -1,4 +1,12 @@
-// An Xidle (X Idle Time) Bash Extension.
+/* 
+  An Xidle (X Idle Time) Bash Loadable Module.
+
+  $Author: Omar Sakka $
+  $Branch: main $
+  $Date: Sat Mar  2 10:42:14 PM GMT 2024 $
+  $Revision: 3.24c45f3.20240302 $
+
+*/
 
 #include <X11/Xlib.h>
 #include <X11/extensions/dpms.h>

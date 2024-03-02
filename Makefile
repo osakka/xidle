@@ -1,4 +1,9 @@
-# Build xidle.
+# xidle.
+#
+# $Author: Omar Sakka $
+# $Branch: main $
+# $Date: Sat Mar  2 10:42:13 PM GMT 2024 $
+# $Revision: 3.24c45f3.20240302 $
 
 prefix = /usr
 exec_prefix = ${prefix}
@@ -32,11 +37,20 @@ xidle.o: xidle.c
 clean: clean_exec clean_obj
 
 clean_exec:
-	[ -e xidle ] && rm xidle
+	rm -f xidle
 
 clean_obj:
-	[ -e xidle.o ] && rm xidle.o
+	rm -f xidle.o
 
 install:
-	[ -e xidle ] && sudo mv xidle /usr/lib/bash/xidle
-	[ -e /usr/lib/bash/xidle ] && sudo chmod a+x /usr/lib/bash/xidle
+	sudo mv xidle /usr/lib/bash/xidle
+	sudo chmod a+x /usr/lib/bash/xidle
+	sudo chown root:root /usr/lib/bash/xidle
+
+update:
+	/home/osakka/tidbits/git-hooks/srcvar_substition
+
+commit: update
+	git add -A
+	git commit -m "This is a non-descriptive commit message"
+	git push
